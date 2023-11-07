@@ -1,0 +1,28 @@
+<!-- Heroes.component.html: On mallitiedosto(templaatti) HeroesComponentille.
+Se määrittää komponentin näkmän  rakenteen ja ulkoasun.
+Tässä tapauksessa se sisältää lomakkeen, joka mahdollistaa sankarten nimen syöttämisen
+ja muokkaamisen käyttäjältä. Lomakkeella käytetään kaksisuuntaista tietojen bindaamista ngModelin avulla.
+Joka bindaa syötteen arvon hero.name -ominaisuuteen. -->
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <!--Painikeeseen bindataan valittu Hero ja vaihtaa sen css arvoja (lukee alhaalla mitä selectedHero tekee)-->
+    <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span>
+      <span class="name">{{hero.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<!--Jos valitaan Hero niin alhaalla oleva tapahtuu
+Ensiksi esiintyy selectedHero -muuttuja isolla.
+Sen jälkeen näytetään valitun Heron id jonka jälkeen nimi ja inputti kenttä jossa 
+voi muokata heron nimeä-->
+<div *ngIf="selectedHero">
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div>id: {{selectedHero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+  </div>
+</div>

@@ -1,0 +1,24 @@
+1. The Hero Editor
+-Tässä osassa luotiin sankarikomponentti
+-Esiteltiin sankari ja annettiin sille nimeksi "Windstorm"
+-Jotta saisimme sen näkyville html komponentissa, tuomme sen sinne "<h2>{{hero}}</h2>" 
+ja jälkeenpäin muokkaamme sitä<h2>{{hero.name | uppercase}} Details</h2>
+-Jotta voisimme sitte näyttää HeroesComponentin, se pitää lisätä AppComponenttiin
+-App.component.ts on siis tiedosto joka sisältää sovelluksen pääkomponentin logiikan ja toiminallisuuden
+
+-Tämän jälkeen luomme hero.ts komponentin app kansioon
+-Teemme tämän siksi koska sinne tulee sankarin tietorakenne
+{alustamme sille id;n ja tyypitämme sen numeroksi, nimen stringiksi}
+-Tämän jälkeen tuomme { Hero };n hero.component.tsään
+
+-Päivitämme heroes.component.html;ään sankarin tiedot jotta näemme ne käyttöliittymässä
+-Muokkaamme vielä näkymää sillä tavalla että voimme vaihtaa sankarin nimeä
+
+-Palaamme app.module.tsään ja tuomme FormsModulen sinne
+-Formsmodule on siis moduuli joka tarjoaa työkalut HTML-lomakkeiden luontiin ja käsittelyyn
+-Niiden avulla on helppo luoda elementtejä 
+-esim. lomakkeen kentät, validointi (varmistaa että tiedot ovat oikein) ja tallennus tietokantaan tms.
+
+2. Display a list 
+-Tässä tehtävässä tuotiin lisää sankareita kehiin jotka laitettiin näkymään heroes.component.html komponentissa
+-Opin myös *ngFor ja *ngIf käytön, ne toimivat vähän niikuin for Each ja If lauseet
